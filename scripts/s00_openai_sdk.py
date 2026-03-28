@@ -1,6 +1,7 @@
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
+from rich import print
 
 load_dotenv()
 
@@ -19,4 +20,6 @@ response = client.chat.completions.create(
 )
 
 # 打印
-print(response.choices[0].message.content)
+print(f"response:\n{response}")
+print("===== ===== ===== =====")
+print(f"response.choices[0].message:\n{response.choices[0].message}")
