@@ -107,7 +107,10 @@ CHILD_TOOLS = [
             "description": "Read file contents.",
             "parameters": {
                 "type": "object",
-                "properties": {"path": {"type": "string"}, "limit": {"type": "integer"}},
+                "properties": {
+                    "path": {"type": "string"},
+                    "limit": {"type": "integer"},
+                },
                 "required": ["path"],
             },
         },
@@ -119,7 +122,10 @@ CHILD_TOOLS = [
             "description": "Write content to file.",
             "parameters": {
                 "type": "object",
-                "properties": {"path": {"type": "string"}, "content": {"type": "string"}},
+                "properties": {
+                    "path": {"type": "string"},
+                    "content": {"type": "string"},
+                },
                 "required": ["path", "content"],
             },
         },
@@ -230,8 +236,14 @@ PARENT_TOOLS = CHILD_TOOLS + [
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "prompt": {"type": "string", "description": "Task prompt for the subagent"},
-                    "description": {"type": "string", "description": "Short description of the task"},
+                    "prompt": {
+                        "type": "string",
+                        "description": "Task prompt for the subagent",
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Short description of the task",
+                    },
                 },
                 "required": ["prompt"],
             },
@@ -278,17 +290,19 @@ def agent_loop(messages: list):
 
 
 if __name__ == "__main__":
-    messages = [{
-        "role": "system",
-        "content": SYSTEM,
-    }]
+    messages = [
+        {
+            "role": "system",
+            "content": SYSTEM,
+        }
+    ]
 
     while True:
         try:
             query = input("\033[36ms04 >> \033[0m")
         except (EOFError, KeyboardInterrupt):
             break
-        
+
         if query.strip().lower() in ("q", "exit", ""):
             break
 

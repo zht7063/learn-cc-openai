@@ -59,6 +59,8 @@ htmlcov/
 
 # AI assistant local configs
 CLAUDE.local.md
+.agents/
+.claude/
 
 # OS
 .DS_Store
