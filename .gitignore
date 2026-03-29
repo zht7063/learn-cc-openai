@@ -71,3 +71,4 @@ Desktop.ini
 *.log
 *.tmp
 .cache/
+.transcripts/
